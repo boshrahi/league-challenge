@@ -1,7 +1,5 @@
 package com.boshra.league.data.auth
 
-import com.boshra.league.data.auth.AuthRepository
-import com.boshra.league.data.auth.AuthRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
