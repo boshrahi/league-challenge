@@ -23,64 +23,6 @@ class PostsViewModel @Inject constructor(
   private val _state = MutableStateFlow(PostsUiState(isLoading = false))
   val state = _state.asStateFlow()
 
- /* fun login() {
-    viewModelScope.launch {
-      loginUseCase().onStart {
-        _state.update { state ->
-          state.copy(
-            isLoading = true,
-            error = null,
-            message = null,
-            function = null,
-          )
-        }
-      }
-        .onCompletion { _state.update { state -> state.copy(isLoading = false) } }
-        .onEach { result ->
-          when (result) {
-            is NetworkResult.Failure -> {
-              when (result.error) {
-                is GeneralError.ApiError -> {
-                  _state.update { state ->
-                    state.copy(
-                      error = result.error,
-                      message = (result.error as GeneralError.ApiError).message,
-                      isLoading = false,
-                      function = ::login,
-                    )
-                  }
-                }
-
-                GeneralError.NetworkError -> {
-                  _state.update { state ->
-                    state.copy(
-                      error = result.error,
-                      message = "No internet connection. Please check your network settings.",
-                      isLoading = false,
-                      function = ::login,
-                    )
-                  }
-                }
-
-                is GeneralError.UnknownError -> {
-                  _state.update { state ->
-                    state.copy(
-                      error = result.error,
-                      message = (result.error as GeneralError.UnknownError).error.message,
-                      isLoading = false,
-                      function = ::login,
-                    )
-                  }
-                }
-              }
-            }
-
-            is NetworkResult.Success -> getPosts()
-          }
-        }.collect()
-    }
-  }*/
-
   fun getPosts() {
     viewModelScope.launch {
       getPostsUseCase().onStart {
