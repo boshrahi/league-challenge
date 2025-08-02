@@ -9,5 +9,6 @@ android {
 dependencies {
 
   implementation(project(":data:api"))
+  implementation(project(":domain:repos"))
   api(libs.paging.runtime)
 }

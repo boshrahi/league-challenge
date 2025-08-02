@@ -1,4 +1,4 @@
-package com.boshra.league.model
+package com.boshra.league.domain.model
 
 sealed class GeneralError {
   data class ApiError(val message: String?, val code: Int) : GeneralError()

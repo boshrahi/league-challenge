@@ -3,10 +3,9 @@ plugins {
 }
 
 android {
-  namespace = "com.boshra.league.domain.domain.posts"
+  namespace = "com.boshra.league.domain.domain.repos"
 }
 
 dependencies {
-  implementation(project(":domain:repos"))
   api(libs.paging.runtime)
 }

@@ -2,8 +2,8 @@ package com.boshra.posts
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.boshra.league.model.GeneralError
-import com.boshra.league.model.NetworkResult
+import com.boshra.league.domain.model.GeneralError
+import com.boshra.league.domain.model.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

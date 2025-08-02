@@ -8,5 +8,7 @@ android {
 }
 dependencies {
   implementation(project(":domain:posts"))
+  implementation(project(":data:league-posts"))
+  implementation(project(":data:league-auth"))
   implementation(libs.lottie.compose)
 }

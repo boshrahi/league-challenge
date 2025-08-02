@@ -39,8 +39,8 @@ import coil.compose.AsyncImage
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.rememberLottieComposition
+import com.boshra.league.domain.model.GeneralError
 import com.boshra.league.feature.posts.R
-import com.boshra.league.model.GeneralError
 import com.boshra.posts.model.PostUiModel
 
 @Composable

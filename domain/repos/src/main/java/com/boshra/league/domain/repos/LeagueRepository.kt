@@ -1,14 +1,12 @@
-package com.boshra.league.api
+package com.boshra.league.domain.repos
 
 import com.boshra.league.domain.model.GeneralError
 import com.boshra.league.domain.model.NetworkResult
 import com.boshra.league.domain.model.Post
-import com.boshra.league.domain.model.TokenHolder
 import com.boshra.league.domain.model.User
 
-interface LeagueRemoteSource {
+interface LeagueRepository {
 
-  suspend fun getUsers(token: String): NetworkResult<List<User>, GeneralError>
   suspend fun getPosts(token: String): NetworkResult<List<Post>, GeneralError>
-  suspend fun login(): NetworkResult<TokenHolder, GeneralError>
+  suspend fun getUsers(token: String): NetworkResult<List<User>, GeneralError>
 }

@@ -2,8 +2,8 @@ package com.boshra.league.api
 
 import com.boshra.league.data.network.response.LeaguePostResultResponse
 import com.boshra.league.data.network.response.LeagueUserResultResponse
-import com.boshra.league.model.Post
-import com.boshra.league.model.User
+import com.boshra.league.domain.model.Post
+import com.boshra.league.domain.model.User
 
 fun LeagueUserResultResponse.toUser(): User = User(
   username = this.username,

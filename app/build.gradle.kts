@@ -20,7 +20,6 @@ android {
 
 dependencies {
 
-  implementation(project(":data:model"))
   implementation(project(":feature:posts"))
   implementation(libs.material3)
   implementation(libs.androidx.navigation.compose)

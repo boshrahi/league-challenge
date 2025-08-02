@@ -1,6 +1,6 @@
 package com.boshra.posts
 
-import com.boshra.league.model.GeneralError
+import com.boshra.league.domain.model.GeneralError
 import com.boshra.posts.model.PostUiModel
 
 data class PostsUiState(

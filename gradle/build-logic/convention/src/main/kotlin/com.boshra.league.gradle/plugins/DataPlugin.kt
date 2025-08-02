@@ -15,7 +15,7 @@ class DataPlugin : Plugin<Project> {
       }
 
       dependencies {
-        add("implementation", project(":data:model"))
+        add("implementation", project(":domain:model"))
         add("testImplementation", libs.findLibrary("junit").get())
         add("androidTestImplementation", libs.findLibrary("androidx-test-ext-junit").get())
       }

@@ -2,11 +2,11 @@ package com.boshra.league.api
 
 import com.boshra.league.data.network.LeagueService
 import com.boshra.league.data.network.adapter.NetworkResponse
-import com.boshra.league.model.GeneralError
-import com.boshra.league.model.NetworkResult
-import com.boshra.league.model.Post
-import com.boshra.league.model.TokenHolder
-import com.boshra.league.model.User
+import com.boshra.league.domain.model.GeneralError
+import com.boshra.league.domain.model.NetworkResult
+import com.boshra.league.domain.model.Post
+import com.boshra.league.domain.model.TokenHolder
+import com.boshra.league.domain.model.User
 import javax.inject.Inject
 
 internal class LeagueRemoteSourceImpl @Inject constructor(

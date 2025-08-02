@@ -1,4 +1,4 @@
-package com.boshra.league.model
+package com.boshra.league.domain.model
 
 sealed class NetworkResult<out S, out E> {
   data class Success<out S>(val data: S) : NetworkResult<S, Nothing>()

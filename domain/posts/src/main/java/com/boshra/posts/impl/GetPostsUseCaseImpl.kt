@@ -1,10 +1,10 @@
 package com.boshra.posts.impl
 
-import com.boshra.league.data.auth.AuthRepository
-import com.boshra.league.model.GeneralError
-import com.boshra.league.model.NetworkResult
-import com.boshra.league.model.TokenHolder
-import com.boshra.league.posts.LeagueRepository
+import com.boshra.league.domain.model.GeneralError
+import com.boshra.league.domain.model.NetworkResult
+import com.boshra.league.domain.model.TokenHolder
+import com.boshra.league.domain.repos.AuthRepository
+import com.boshra.league.domain.repos.LeagueRepository
 import com.boshra.posts.GetPostsUseCase
 import com.boshra.posts.model.PostUiModel
 import kotlinx.coroutines.flow.Flow
