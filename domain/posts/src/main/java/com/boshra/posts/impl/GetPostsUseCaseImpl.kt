@@ -8,7 +8,6 @@ import com.boshra.league.domain.repos.LeagueRepository
 import com.boshra.posts.GetPostsUseCase
 import com.boshra.posts.model.PostUiModel
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
@@ -24,14 +23,14 @@ class GetPostsUseCaseImpl @Inject constructor(
         }
 
         is NetworkResult.Success -> {
-          getUsersAndPosts(res.data)
+          emit(getUsersAndPosts(res.data))
         }
       }
     }
 
-  private suspend fun FlowCollector<NetworkResult<List<PostUiModel>, GeneralError>>.getUsersAndPosts(
+  private suspend fun getUsersAndPosts(
     token: TokenHolder,
-  ) {
+  ): NetworkResult<List<PostUiModel>, GeneralError> {
     val postRes = leagueRepository.getPosts(token.apiToken ?: "")
     val userRes = leagueRepository.getUsers(token.apiToken ?: "")
 
@@ -45,11 +44,13 @@ class GetPostsUseCaseImpl @Inject constructor(
           username = extractedUser?.username,
         )
       }
-      emit(NetworkResult.Success(postsUi))
+      return NetworkResult.Success(postsUi)
     } else if (postRes is NetworkResult.Failure) {
-      emit(postRes)
+      return postRes
     } else if (userRes is NetworkResult.Failure) {
-      emit(userRes)
+      return userRes
+    } else {
+      return NetworkResult.Failure(GeneralError.UnknownError(Throwable("unknown")))
     }
   }
 }

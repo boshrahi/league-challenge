@@ -17,9 +17,6 @@ class ApplicationPlugin : Plugin<Project> {
         apply("org.jetbrains.kotlin.android")
         apply("org.jetbrains.kotlin.plugin.compose")
 
-        apply("com.google.gms.google-services")
-        apply("com.google.firebase.crashlytics")
-
         apply("com.boshra.league.gradle.android.application.compose")
         apply("com.boshra.league.gradle.android.hilt")
       }
@@ -53,9 +50,6 @@ class ApplicationPlugin : Plugin<Project> {
       }
 
       dependencies {
-        add("implementation", libs.findLibrary("firebase-crashlytics").get())
-        add("implementation", libs.findLibrary("firebase-analytics").get())
-        add("implementation", platform(libs.findLibrary("firebase-bom").get()))
         add("testImplementation", libs.findLibrary("junit").get())
         add("androidTestImplementation", libs.findLibrary("androidx-test-ext-junit").get())
       }
